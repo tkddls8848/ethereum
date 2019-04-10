@@ -1,0 +1,6 @@
+# ignore folder list
+node_modules/
+test/
+
+# ignore file list
+package-lock.json

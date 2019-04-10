@@ -1,5 +1,5 @@
-const MyContract = artifacts.require("./MyContract.sol");
+var RealEstate = artifacts.require("./RealEstate.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(MyContract);
+  deployer.deploy(RealEstate);
 };

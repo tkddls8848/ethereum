@@ -1,5 +1,5 @@
 const RealEstate = artifacts.require("./RealEstate.sol");
 
-module.exports = function(deployer) {
+module.exports = (deployer) => {
   deployer.deploy(RealEstate);
 };

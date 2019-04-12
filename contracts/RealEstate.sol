@@ -11,6 +11,11 @@ contract RealEstate {
     address[10] public buyers;
     mapping(uint => Buyer) public buyerInfo;
 
+    event logBuyRealEstate(
+        address _buyer,
+        uint _id
+    );
+
     constructor() public {
         owner = msg.sender;
     }
@@ -21,5 +26,15 @@ contract RealEstate {
         buyerInfo[_id] = Buyer(msg.sender, _name, _age);
 
         owner.transfer(msg.value);
+        emit logBuyRealEstate(msg.sender, _id);
+    }
+
+    function getBuyerInfo(uint _id) public view returns(address, bytes32, uint){
+        Buyer memory buyer = buyerInfo[_id];
+        return (buyer.buyerAddress, buyer.name, buyer.age);
+    }
+
+    function getAllBuyer() public view returns(address[10]){
+        return buyers;
     }
 }

@@ -14,4 +14,6 @@ logs
 npm-debug.log*
 
 #src
-src
+src/css
+src/fonts
+src/images
